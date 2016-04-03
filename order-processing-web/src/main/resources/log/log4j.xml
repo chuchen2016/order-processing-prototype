@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//log4j/log4j Configuration//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"
+                     threshold="null" debug="null">
+    <appender name="CONSOLE"
+              class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[order-processing-web]%d %-5p [%c] %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="fileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <!-- <param name="Threshold" value="INFO" /> -->
+        <param name="File" value="/data/applogs/order-processing-web/app.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[order-processing-web]%d %-5p  [%c %L] %m%n"/>
+        </layout>
+    </appender>
+ 	<appender name="ErrorFileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="Threshold" value="ERROR" />
+        <param name="File" value="/data/applogs/order-processing-web/error.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%t]%d %-5p %l | %m%n" />
+        </layout>
+    </appender>
+
+    <logger name="com.ebay" additivity="false">
+        <level value="ERROR"/>
+    </logger>
+
+    <logger name="com.ibatis" additivity="false">
+        <level value="WARN"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <logger name="java.sql">
+        <level value="WARN"/>
+    </logger>
+
+    <logger name="org.springframework.jms">
+        <level value="ERROR"/>
+    </logger>
+    <logger name="org.apache.activemq">
+        <level value="ERROR"/>
+    </logger>
+
+    <logger name="org.apache.struts2">
+        <level value="ERROR"/>
+    </logger>
+
+
+    <logger name="com.ebay.order" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="fileAppender" />
+        <appender-ref ref="catAppender" />
+        <appender-ref ref="ErrorFileAppender" />
+    </logger>
+
+    <appender name="catAppender" class="com.dianping.cat.log4j.CatAppender"></appender>
+    
+    <root>
+        <level value="ERROR"/>
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="fileAppender" />
+        <appender-ref ref="catAppender" />
+        <appender-ref ref="ErrorFileAppender" />
+    </root>
+
+</log4j:configuration>

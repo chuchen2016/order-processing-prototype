@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+     http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd
+     http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd"
+	default-autowire="byName">
+
+	<!-- <context:property-placeholder location="classpath:config/applicationContext.properties" 
+		/> -->
+
+	<bean name="placeholder" lazy-init="false"
+		class="com.dianping.lion.client.InitializeConfig">
+		<!-- <property name="propertiesPath" value="config/applicationContext.properties"/> -->
+	</bean>
+	<bean id="poiAsyncServer/" class="com.dianping.dpsf.spring.ServiceRegistry"
+		init-method="init">
+		<property name="services">
+			<map>
+				<entry
+					key="http://service.dianping.com/poiWorkFlowServiceAsync/test_1.0.0"
+					value-ref="newTestInt" />
+				<entry
+				key="http://service.dianping.com/poiAsyncInfoService/poiAsyncInfoService_1.0.0"
+				value-ref="poiAsyncInfoService" />
+				<entry
+				key="http://service.dianping.com/poiAsyncInfoService/poiCategoryMergeService"
+				value-ref="poiCategoryMergeService" />
+            </map>
+		</property>
+		<property name="corePoolSize">
+			<value>180</value>
+		</property>
+		<property name="maxPoolSize">
+			<value>500</value>
+		</property>
+	</bean>
+
+</beans>

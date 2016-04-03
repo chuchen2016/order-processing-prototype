@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE generatorConfiguration  
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<!-- 数据库访问的驱动包 -->
+	<classPathEntry
+		location="/maven_repo/mysql/mysql-connector-java/5.1.26/mysql-connector-java-5.1.26.jar" />
+	<!-- <context id="DPTables" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<property name="suppressAllComments" value="false" />
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://10.1.77.21:3306/DianPing" userId="aspnet_dianping"
+			password="dp!@OpQW34bn">
+		</jdbcConnection>
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<javaModelGenerator targetPackage="com.dianping.poi.datainput.module.dp"
+			targetProject="poi-datainput-service/src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<sqlMapGenerator targetPackage="config.sqlmap.dp"
+			targetProject="poi-datainput-service/src/main/resources">
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.dianping.poi.datainput.mapper.dp" targetProject="poi-datainput-service/src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<table tableName="DP_CategoryList" domainObjectName="DpCategoryList" >
+			<property name="useActualColumnNames" value="true"/>
+		</table>
+		<table tableName="ZS_CityList" domainObjectName="ZsCityList" >
+			<property name="useActualColumnNames" value="true"/>
+		</table>
+	</context> -->
+	
+	<!-- <context id="ShopTables" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<property name="suppressAllComments" value="false" />
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://10.1.77.21:3306/DPShop" userId="aspnet_dianping"
+			password="dp!@OpQW34bn">
+		</jdbcConnection>
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<javaModelGenerator targetPackage="com.dianping.poi.datainput.module.shop"
+			targetProject="poi-datainput-api/src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<sqlMapGenerator targetPackage="config.sqlmap.shop"
+			targetProject="poi-datainput-service/src/main/resources">
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.dianping.poi.datainput.mapper.shop" targetProject="poi-datainput-service/src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<table tableName="DP_Shop" domainObjectName="DpShop" >
+			<property name="useActualColumnNames" value="true"/>
+		</table>
+		<table tableName="DP_ShopCategory" domainObjectName="DpShopCategory" >
+			<property name="useActualColumnNames" value="true"/>
+		</table>
+		<table tableName="POI_ShopCategory" domainObjectName="PoiShopCategory" >
+			<property name="useActualColumnNames" value="false"/>
+		</table>
+		<table tableName="POI_ShopPropMapping" domainObjectName="PoiShopPropMapping" >
+			<property name="useActualColumnNames" value="false"/>
+		</table>
+		<table tableName="POI_ShopUnMatch" domainObjectName="PoiShopUnMatch" >
+			<property name="useActualColumnNames" value="false"/>
+		</table>
+		<table tableName="POI_KwStat" domainObjectName="PoiKwStat" >
+			<property name="useActualColumnNames" value="false"/>
+		</table>
+	</context> -->
+	
+	<!-- <context id="poiTables" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<property name="suppressAllComments" value="false" />
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://10.1.77.22:3306/DianPingPOI" userId="dpcom_poi"
+			password="dp!@RuGRjP4yN">
+		</jdbcConnection>
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<javaModelGenerator targetPackage="com.dianping.poi.datainput.module.poi"
+			targetProject="poi-datainput-service/src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<sqlMapGenerator targetPackage="config.sqlmap.poi"
+			targetProject="poi-datainput-service/src/main/resources">
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.dianping.poi.datainput.mapper.poi" targetProject="poi-datainput-service/src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<table tableName="POI_Category" domainObjectName="PoiCategory" >
+			<property name="useActualColumnNames" value="false"/>
+		</table>
+		<table tableName="POI_Property" domainObjectName="PoiProperty" >
+			<property name="useActualColumnNames" value="false"/>
+		</table>
+		<table tableName="POI_PropertyValue" domainObjectName="PoiPropertyValue" >
+			<property name="useActualColumnNames" value="false"/>
+		</table>
+		<table tableName="POI_PropMapping" domainObjectName="PoiPropMapping" >
+			<property name="useActualColumnNames" value="false"/>
+		</table>
+	</context> -->
+	
+	<context id="dppoiTables" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<property name="suppressAllComments" value="false" />
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://10.1.77.21:3306/DPPOI" userId="aspnet_dianping"
+			password="dp!@OpQW34bn">
+		</jdbcConnection>
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<javaModelGenerator targetPackage="com.dianping.poi.datainput.module.dppoi"
+			targetProject="poi-datainput-api/src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<sqlMapGenerator targetPackage="config.sqlmap.dppoi"
+			targetProject="poi-datainput-service/src/main/resources">
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.dianping.poi.datainput.mapper.dppoi" targetProject="poi-datainput-service/src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<!-- <table tableName="POI_Invalid_Shop_Category" domainObjectName="POIInvalidShopCategory" >
+			<property name="useActualColumnNames" value="false"/>
+		</table> -->
+		<!-- <table tableName="POI_ShopCategory_New" domainObjectName="PoiShopCategoryNew" >
+			<property name="useActualColumnNames" value="false"/>
+		</table>
+		<table tableName="POI_ShopPropMapping" domainObjectName="PoiShopPropMapping" >
+			<property name="useActualColumnNames" value="false"/>
+		</table>
+		<table tableName="POI_Shop" domainObjectName="PoiShop" >
+			<property name="useActualColumnNames" value="true"/>
+		</table>
+		<table tableName="POI_Property" domainObjectName="PoiProperty" >
+			<property name="useActualColumnNames" value="false"/>
+		</table>
+		<table tableName="POI_PropertyValue" domainObjectName="PoiPropertyValue" >
+			<property name="useActualColumnNames" value="false"/>
+		</table>
+		<table tableName="POI_PropMapping" domainObjectName="PoiPropMapping" >
+			<property name="useActualColumnNames" value="false"/>
+		</table> -->
+		<table tableName="POI_ShopCategory" domainObjectName="POIShopCategory" >
+			<property name="useActualColumnNames" value="false"/>
+		</table>
+		<table tableName="POI_ShopProperty" domainObjectName="POIShopProperty" >
+			<property name="useActualColumnNames" value="false"/>
+		</table>
+	</context>
+	
+	
+	 <!-- <context id="CategoryTables" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<property name="suppressAllComments" value="false" />
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://10.1.77.21:3306/DPCategory" userId="aspnet_dianping"
+			password="dp!@OpQW34bn">
+		</jdbcConnection>
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<javaModelGenerator targetPackage="com.dianping.poi.datainput.module.category"
+			targetProject="poi-datainput-api/src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<sqlMapGenerator targetPackage="config.sqlmap.category"
+			targetProject="poi-datainput-service/src/main/resources">
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.dianping.poi.datainput.mapper.category" targetProject="poi-datainput-service/src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<table tableName="POI_Category" domainObjectName="POICategory" >
+			<property name="useActualColumnNames" value="false"/>
+		</table>
+	</context> -->
+
+</generatorConfiguration>
