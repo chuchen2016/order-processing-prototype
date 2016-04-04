@@ -55,7 +55,7 @@ public class OrderTaskScheduler implements InitializingBean,DisposableBean {
 				for(OrderTaskDO task : tasks){
 					OrderProcessingThread threadTask = new OrderProcessingThread();
 					threadTask.setData(task);
-					OrderTaskExecutor executor = orderTaskProcessExecutorFactory.getOrderProcessingThread(task.getType());
+					OrderTaskExecutor executor = orderTaskProcessExecutorFactory.getOrderProcessingThread(task.getStep());
 					threadTask.setOrderTaskExecutor(executor);
 					//线程池,每台机器上开启50个线程
 					taskPool.execute(threadTask);
@@ -79,7 +79,7 @@ public class OrderTaskScheduler implements InitializingBean,DisposableBean {
 	 */
 	@Override
 	public void destroy() throws Exception {
-		
+		orderTaskConfigHandler.unRegister(key);
 	}
 	
 	/**

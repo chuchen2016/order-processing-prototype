@@ -18,6 +18,15 @@ import com.ebay.order.processing.model.dataObject.OrderTaskDO;
 import com.ebay.order.processing.query.OrderTaskQuery;
 import com.ebay.order.processing.service.OrderService;
 
+
+/**
+ * 对外提供订单相关的服务
+ * 用户查询订单
+ * 用户提交订单
+ * @author chuchen
+ *
+ */
+
 public class OrderServiceImpl implements OrderService {
 	
 	@Autowired
@@ -63,7 +72,7 @@ public class OrderServiceImpl implements OrderService {
 		result.setCreateTime(current.getCreateTime());
 		result.setCompletedTime(current.getCompletedTime());
 		result.setCurrentStatus(current.getStatus());
-		result.setCurrentType(current.getType());
+		result.setCurrentType(current.getStep());
 		//查询各个阶段的情况
 		List<OrderStepDTO>  steps = new ArrayList<OrderStepDTO>();
 		for(int i = 1; i <= taskList.size() ;i++){

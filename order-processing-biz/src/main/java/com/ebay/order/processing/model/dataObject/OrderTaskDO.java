@@ -11,13 +11,15 @@ public class OrderTaskDO implements Serializable {
 	
 	private Long orderId;
 	
-	private Byte type;
+	private Byte step;
 	
 	private Byte status;
 	
 	private Date createTime;
 	
 	private Date completedTime;
+	
+	private Integer count;//该任务在当前阶段被执行了多少次了
 	
 	private String context;
 
@@ -37,12 +39,12 @@ public class OrderTaskDO implements Serializable {
 		this.orderId = orderId;
 	}
 
-	public Byte getType() {
-		return type;
+	public Byte getStep() {
+		return step;
 	}
 
 	public void setType(Byte type) {
-		this.type = type;
+		this.step = type;
 	}
 
 	public Byte getStatus() {
@@ -76,5 +78,18 @@ public class OrderTaskDO implements Serializable {
 	public void setContext(String context) {
 		this.context = context;
 	}
+
+	public void setStep(Byte step) {
+		this.step = step;
+	}
+
+	public Integer getCount() {
+		return count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+	}
+	
 	
 }

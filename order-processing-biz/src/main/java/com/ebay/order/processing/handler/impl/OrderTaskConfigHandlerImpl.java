@@ -61,6 +61,7 @@ public class OrderTaskConfigHandlerImpl implements OrderTaskConfigHandler {
 			return false;
 		}
 	}
+	
 	/**
 	 * 查询当前机器处于处理任务的机器列表的哪个位置
 	 */
@@ -68,6 +69,7 @@ public class OrderTaskConfigHandlerImpl implements OrderTaskConfigHandler {
 	public Integer queryCurrentTaskRange(String key) {
 		return 5;//mockUp
 	}
+	
 	/**
 	 * 查询当前总共多少机器在处理任务
 	 */

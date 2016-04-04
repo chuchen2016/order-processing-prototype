@@ -6,23 +6,11 @@ import com.ebay.order.processing.model.dataObject.OrderTaskDO;
 
 
 @Service("orderFailureTaskExecutor")
-public class OrderFailureTaskExecutor implements OrderTaskExecutor {
+public class OrderFailureTaskExecutor extends OrderTaskExecutor {
 	
 	@Override
 	public void execute(OrderTaskDO task) {
-		
+		//do post execute................
 	}
-
-	@Override
-	public void onSuccess(OrderTaskDO task) {
-		
-	}
-
-	@Override
-	public void onFailure(OrderTaskDO task) {
-		
-	}
-
-	
 	
 }

@@ -62,7 +62,7 @@ public class OrderTaskHandlerImpl implements OrderTaskHandler {
 		OrderTaskDO nextStep = new OrderTaskDO();
 		nextStep.setStatus(TaskStatusEnum.UNEXECUTED.status);
 		//当前节点的下一步类型,通过枚举中的nextStep来配置
-		nextStep.setType(TaskTypeEnum.getTaskByType(orderTaskDO.getType()).nextType);
+		nextStep.setType(TaskTypeEnum.getTaskByType(orderTaskDO.getStep()).nextType);
 		nextStep.setOrderId(orderTaskDO.getOrderId());
 		nextStep.setContext(orderTaskDO.getContext());
 		orderTaskDAO.insertOnduplicateUpadte(nextStep);
@@ -78,6 +78,17 @@ public class OrderTaskHandlerImpl implements OrderTaskHandler {
 		nextStep.setOrderId(orderTaskDO.getOrderId());
 		nextStep.setContext(orderTaskDO.getContext());
 		orderTaskDAO.insertOnduplicateUpadte(nextStep);
+	}
+
+	@Override//任务执行成功后修改执行状态,修改任务执行次数,失败次数超过五次不再重试
+	public Integer updateOrderTask(OrderTaskDO orderTaskDO, Long orderId, Byte type) {
+		if(orderTaskDO == null || orderId == null || type == null){
+			return 0;
+		}
+		OrderTaskDO example = new OrderTaskDO();
+		example.setOrderId(orderId);
+		example.setType(type);
+		return orderTaskDAO.updateOrderTaskDOByExample(orderTaskDO, example);
 	}
 
 }

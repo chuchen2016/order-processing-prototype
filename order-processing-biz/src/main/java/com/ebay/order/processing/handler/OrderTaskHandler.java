@@ -35,4 +35,15 @@ public interface OrderTaskHandler {
 	 * @return
 	 **/
 	public void createNextStepOnFailure(OrderTaskDO orderTaskDO);
+	
+	
+	/**
+	 * 根据orderId与taskType锁定对应的记录
+	 * 更新OrderTaskStatus
+	 * @param status
+	 * @param orderId
+	 * @param type
+	 * @return
+	 */
+	public Integer updateOrderTask(OrderTaskDO orderTaskDO,Long orderId,Byte type);
 }
